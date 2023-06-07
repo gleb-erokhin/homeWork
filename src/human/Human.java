@@ -1,8 +1,7 @@
-package tree;
+package human;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
 
 /*
 * Описание родственных связей надо сделать, человек может быть и родителем и ребенком

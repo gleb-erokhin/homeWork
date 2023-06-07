@@ -1,6 +1,5 @@
-import com.sun.source.tree.Tree;
-import tree.FamilyTree;
-import tree.Human;
+import familyTree.FamilyTree;
+import human.Human;
 
 import java.io.*;
 
@@ -20,16 +19,26 @@ public class Main {
 
         family.add(new Human("Василий", 12, family.findPerson("Вова"), family.findPerson("Алла")));
 
-        //System.out.println(family.findHuman());
+        System.out.println(family.findHuman());
 
 //        ObjectOutputStream objectOutputStream = new ObjectOutputStream(
 //                new FileOutputStream("tree.out"));
 //        objectOutputStream.writeObject(family);
 //        objectOutputStream.close();
 
-        ObjectInputStream objectInputStream = new ObjectInputStream(
-                new FileInputStream("tree.out"));
-        Tree treeRestored = (Tree) objectInputStream.readObject();
-        objectInputStream.close();
+//        ObjectInputStream objectInputStream = new ObjectInputStream(
+//                new FileInputStream("tree.out"));
+//        FamilyTree treeRestored = (FamilyTree) objectInputStream.readObject();
+//        objectInputStream.close();
+
+        System.out.println(service.getInfo());
+
+        service.sortByName();
+        System.out.println(service.getInfo());
+
+        service.sortByAge();
+        System.out.println(service.getInfo());
+
+        StudyGroup<Teacher> studyGroup = new StudyGroup<>();
     }
 }

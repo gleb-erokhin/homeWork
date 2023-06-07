@@ -1,6 +1,7 @@
-package tree;
+package familyTree;
 
-import javax.xml.namespace.QName;
+import human.Human;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
