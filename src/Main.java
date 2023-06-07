@@ -14,10 +14,10 @@ public class Main {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         FamilyTree family = new FamilyTree();
 
-        family.add(new Human("Вова", 30));
-        family.add(new Human("Алла", 30));
+        family.add(new Human("Вова", 1950));
+        family.add(new Human("Алла", 1945));
 
-        family.add(new Human("Василий", 12, family.findPerson("Вова"), family.findPerson("Алла")));
+        family.add(new Human("Василий", 1983, family.findPerson("Вова"), family.findPerson("Алла")));
 
         System.out.println(family.findHuman());
 
@@ -31,14 +31,14 @@ public class Main {
 //        FamilyTree treeRestored = (FamilyTree) objectInputStream.readObject();
 //        objectInputStream.close();
 
-        System.out.println(service.getInfo());
-
-        service.sortByName();
-        System.out.println(service.getInfo());
-
-        service.sortByAge();
-        System.out.println(service.getInfo());
-
-        StudyGroup<Teacher> studyGroup = new StudyGroup<>();
+//        System.out.println(service.getInfo());
+//
+//        service.sortByName();
+//        System.out.println(service.getInfo());
+//
+//        service.sortByAge();
+//        System.out.println(service.getInfo());
+//
+//        StudyGroup<Teacher> studyGroup = new StudyGroup<>();
     }
 }

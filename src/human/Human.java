@@ -69,6 +69,9 @@ public class Human implements Serializable {
         out.append("name: ");
         out.append(name);
         out.append("; ");
+        out.append("date of birth: ");
+        out.append(getAge());
+        out.append("; ");
         out.append(getMeMother());
         out.append("; ");
         out.append(getMeFather());
