@@ -1,16 +1,20 @@
 package familyTree;
 
+import familyTree.comparators.ByDate;
+import familyTree.comparators.ByName;
 import human.Human;
+import human.iterators.HumanIterator;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /*
 * у него будет список людей и методы работы с этим списком
 * добавить нового человека в дерево или найти в дереве
 * как вендинг машин из примера семинара*/
-public class FamilyTree implements Serializable {
+public class FamilyTree implements Serializable, Iterator<Human> {
     private List<Human> personList;
 
     public FamilyTree() { this(new ArrayList<>()); }
@@ -55,5 +59,35 @@ public class FamilyTree implements Serializable {
             find.append("\n");
         }
         return find.toString();
+    }
+
+    @Override
+    public Iterator<Human> iterator() {
+        return new HumanIterator(personList);
+    }
+
+    /**
+     * Сортирует древо по дате рождения
+     */
+    public void sortByDate() {
+        personList.sort(new ByDate());
+    }
+
+    /**
+     * Сортирует древо в алфавитном порядке
+     */
+    public void sortByName() {
+
+        personList.sort(new ByName());
+    }
+
+    @Override
+    public boolean hasNext() {
+        return false;
+    }
+
+    @Override
+    public Human next() {
+        return null;
     }
 }
